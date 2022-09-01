@@ -13,6 +13,10 @@
 		0643992928ADC29B00B8BBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0643992828ADC29B00B8BBAD /* Preview Assets.xcassets */; };
 		067B411928B4465F00520DA1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B411828B4465F00520DA1 /* Game.swift */; };
 		067B412128B6F1EA00520DA1 /* BullseyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B412028B6F1EA00520DA1 /* BullseyeTests.swift */; };
+		06FD584D28BBE46300901739 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD584C28BBE46300901739 /* TextViews.swift */; };
+		06FD585228BECD1200901739 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD585128BECD1200901739 /* Shapes.swift */; };
+		06FD585428BF820600901739 /* RoundViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD585328BF820600901739 /* RoundViews.swift */; };
+		06FD585628BF8D1900901739 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FD585528BF8D1900901739 /* BackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		067B411828B4465F00520DA1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		067B411E28B6F1EA00520DA1 /* BullseyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullseyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		067B412028B6F1EA00520DA1 /* BullseyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullseyeTests.swift; sourceTree = "<group>"; };
+		06FD584C28BBE46300901739 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
+		06FD585128BECD1200901739 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		06FD585328BF820600901739 /* RoundViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViews.swift; sourceTree = "<group>"; };
+		06FD585528BF8D1900901739 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				0643992328ADC29A00B8BBAD /* ContentView.swift */,
+				06FD584C28BBE46300901739 /* TextViews.swift */,
+				06FD585128BECD1200901739 /* Shapes.swift */,
+				06FD585328BF820600901739 /* RoundViews.swift */,
+				06FD585528BF8D1900901739 /* BackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,8 +237,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0643992428ADC29A00B8BBAD /* ContentView.swift in Sources */,
+				06FD584D28BBE46300901739 /* TextViews.swift in Sources */,
+				06FD585228BECD1200901739 /* Shapes.swift in Sources */,
+				06FD585628BF8D1900901739 /* BackgroundView.swift in Sources */,
 				067B411928B4465F00520DA1 /* Game.swift in Sources */,
 				0643992228ADC29A00B8BBAD /* BullseyeApp.swift in Sources */,
+				06FD585428BF820600901739 /* RoundViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
