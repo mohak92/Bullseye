@@ -9,19 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var alertIsVisible: Bool =  false;
+    @State private var alertIsVisible: Bool = false;
     @State private var sliderValue: Double = 50.0;
     @State private var game: Game = Game();
     
     var body: some View {
         ZStack {
-           BackgroundView(game: $game)
+            BackgroundView(game: $game)
             VStack {
                 InstructionsView(game: $game)
-                    .padding(.bottom, 100)
-                HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+                    .padding(.bottom, alertIsVisible ? 0 : 100)
+                if alertIsVisible {
+                    PointsView(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+                        .transition(.scale)
+                } else {
+                    HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+                        .transition(.scale)
+                }
             }
-            SliderView(sliderValue: $sliderValue)
+            if !alertIsVisible {
+                SliderView(sliderValue: $sliderValue)
+                    .transition(.scale)
+            }
         }
     }
 }
@@ -64,7 +73,9 @@ struct HitMeButton: View {
     
     var body: some View {
         Button(action: {
-            self.alertIsVisible = true;
+            withAnimation {
+                self.alertIsVisible = true;
+            }
         }) {
             Text("Hit me".uppercased())
                 .bold()
@@ -75,20 +86,21 @@ struct HitMeButton: View {
             LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
         })
         .foregroundColor(Color.white)
-        .cornerRadius(21.0)
+        .cornerRadius(Constants.General.roundRectCornerRadius)
         .overlay(
-            RoundedRectangle(cornerRadius: 21.0)
-                .strokeBorder(Color.white, lineWidth: 2.0)
+            RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
+                .strokeBorder(Color.white, lineWidth: Constants.General.strokeWidth)
         )
-        .alert("Hello there!", isPresented: $alertIsVisible) {
-            Button("Awesome") {
-                game.startNewRound(points: game.points(sliderValue: Int(sliderValue)))
-            }
-        } message: {
-            let roundedValue: Int = Int(self.sliderValue.rounded())
-            Text("The slider's value is \(roundedValue).\n" +
-                 "You scored \(self.game.points(sliderValue: roundedValue)) points this round")
-        }
+        
+        //        .alert("Hello there!", isPresented: $alertIsVisible) {
+        //            Button("Awesome") {
+        //                game.startNewRound(points: game.points(sliderValue: Int(sliderValue)))
+        //            }
+        //        } message: {
+        //            let roundedValue: Int = Int(self.sliderValue.rounded())
+        //            Text("The slider's value is \(roundedValue).\n" +
+        //                 "You scored \(self.game.points(sliderValue: roundedValue)) points this round")
+        //        }
     }
 }
 
